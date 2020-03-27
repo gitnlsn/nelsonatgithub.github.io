@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/tags/c/</loc>
+    <lastmod>2020-03-24T12:12:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <lastmod>2020-03-24T12:12:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/development/</loc>
+    <lastmod>2020-03-24T12:12:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/emscripten/</loc>
+    <lastmod>2020-03-24T12:12:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/javascript/</loc>
+    <lastmod>2020-03-24T12:12:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/mesh-refinement/</loc>
+    <lastmod>2020-03-24T12:12:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-03-24T12:12:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-03-24T12:12:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-03-24T12:12:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/triangulation/</loc>
+    <lastmod>2020-03-24T12:12:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/webassembly/</loc>
+    <lastmod>2020-03-24T12:12:33-03:00</lastmod>
+  </url>
+  
+</urlset>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on Nelson Portifolio</title>
+    <link>/tags/javascript/</link>
+    <description>Recent content in Javascript on Nelson Portifolio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 Mar 2020 12:12:33 -0300</lastBuildDate>
+    
+	<atom:link href="/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Triangulation</title>
+      <link>/post/triangulation/</link>
+      <pubDate>Tue, 24 Mar 2020 12:12:33 -0300</pubDate>
+      
+      <guid>/post/triangulation/</guid>
+      <description>Delaunay triangulation is a special triangulation, where the circumcircle of any triangle in the triangulation does not contain any vertex in its interior. L&amp;rsquo;idée was proposed in 1934 by Boris Delaunay in his paper Sur la Sphère Vide [1]. The triangulation&amp;rsquo;s emptiness property maximizes the minimum interior angle of the triangles in the triangulation and has important applications to several areas, including mesh generation.
+A robust C-language implementation of mesh generation and refinement that applies Delaunay triangulation is Triangle, made by Jonathan Richard Shewchuk in 1996: Engineering a 2D Quality Mesh Generator and Delaunay Triangulator [2].</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#1b1b1b">
+	<title>Triangulation | Nelson Portifolio</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="Triangulation" />
+<meta property="og:description" content="Delaunay triangulation is a special triangulation, where the circumcircle of any triangle in the triangulation does not contain any vertex in its interior. L&rsquo;idée was proposed in 1934 by Boris Delaunay in his paper Sur la Sphère Vide [1]. The triangulation&rsquo;s emptiness property maximizes the minimum interior angle of the triangles in the triangulation and has important applications to several areas, including mesh generation.
+A robust C-language implementation of mesh generation and refinement that applies Delaunay triangulation is Triangle, made by Jonathan Richard Shewchuk in 1996: Engineering a 2D Quality Mesh Generator and Delaunay Triangulator [2]." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/triangulation/" />
+<meta property="article:published_time" content="2020-03-24T12:12:33-03:00" />
+<meta property="article:modified_time" content="2020-03-24T12:12:33-03:00" />
+
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Triangulation"/>
+<meta name="twitter:description" content="Delaunay triangulation is a special triangulation, where the circumcircle of any triangle in the triangulation does not contain any vertex in its interior. L&rsquo;idée was proposed in 1934 by Boris Delaunay in his paper Sur la Sphère Vide [1]. The triangulation&rsquo;s emptiness property maximizes the minimum interior angle of the triangles in the triangulation and has important applications to several areas, including mesh generation.
+A robust C-language implementation of mesh generation and refinement that applies Delaunay triangulation is Triangle, made by Jonathan Richard Shewchuk in 1996: Engineering a 2D Quality Mesh Generator and Delaunay Triangulator [2]."/>
+
+	<link rel="stylesheet" href="/css/bundle.css">
+	<link rel="stylesheet" href="/css/themes/dark-green.css">
+	<link rel="icon" href="/icons/16.png" sizes="16x16" type="image/png">
+	<link rel="icon" href="/icons/32.png" sizes="32x32" type="image/png">
+	<link rel="manifest" href="/manifest.json">
+		
+</head>
+<body>
+	<header class="header">
+	<a class="logo" href="/">Nelson Portifolio</a>
+	
+<nav class="main-nav main-nav--right" role="navigation">
+	<button id="toggle" class="main-nav__btn" aria-label="Menu toggle" aria-expanded="false" tabindex="0">
+		<div class="main-nav__btn-box" tabindex="-1">
+			<svg class="main-nav__icon icon-menu" width="18" height="18" viewBox="0 0 18 18">
+				<path class="icon-menu__burger" d="M18 0v3.6H0V0h18zM0 10.8h18V7.2H0v3.6zM0 18h18v-3.6H0V18z"/>
+				<path class="icon-menu__x" d="M11.55 9L18 15.45 15.45 18 9 11.55 2.55 18 0 15.45 6.45 9 0 2.55 2.55 0 9 6.45 15.45 0 18 2.55 11.55 9z"/>
+			</svg>
+		</div>
+	</button>
+	<ul id="menu" class="main-nav__list">
+			<li class="main-nav__item">
+				<a class="main-nav__link" href="/categories/">
+					<i class='fa fa-heart'></i>
+					<span class="main-nav__text">Categories</span>
+					
+				</a>
+			</li>
+			<li class="main-nav__item">
+				<a class="main-nav__link" href="/tags/">
+					<i class='fa fa-heart'></i>
+					<span class="main-nav__text">Tags</span>
+					
+				</a>
+			</li>
+	</ul>
+</nav>
+</header>
+	<div class="primary">
+	
+	<main class="main">
+		
+<nav class="breadcrumb block" aria-label="breadcrumb">
+	<ol class="breadcrumb__list">
+		
+		<li class="breadcrumb__item">
+			<a class="breadcrumbs__link" href="/">Home</a>
+		</li>
+		<li class="breadcrumb__item">
+			<a class="breadcrumbs__link" href="/post/">Posts</a>
+		</li>
+		<li class="breadcrumbs__item breadcrumb__item--active" aria-current="page">Triangulation</li>
+	</ol>
+</nav>
+		<div class="single block">
+			<article class="entry">
+	<div class="entry__meta meta mb">
+	<time class="entry__meta-published meta-published" datetime="2020-03-24T12:12:33-03:00">March 24, 2020</time>
+<span class="entry__meta-categories meta-categories">
+	<span class="meta-categories__list">Categories:
+		<a class="meta-categories__link" href="/categories/development" rel="category">Development</a>
+	</span>
+</span>
+	</div>
+				<h1 class="entry__title">Triangulation</h1>
+				<div class="entry__content"><p><a href="https://wikipedia.org/wiki/Delaunay_triangulation">Delaunay triangulation</a> is a special triangulation, where the circumcircle of any triangle in the triangulation does not contain any vertex in its interior. L&rsquo;idée was proposed in 1934 by Boris Delaunay in his paper Sur la Sphère Vide [1]. The triangulation&rsquo;s emptiness property maximizes the minimum interior angle of the triangles in the triangulation and has important applications to several areas, including mesh generation.</p>
+<p>A robust C-language implementation of mesh generation and refinement that applies Delaunay triangulation is <a href="https://www.cs.cmu.edu/~quake/triangle.html">Triangle</a>, made by Jonathan Richard Shewchuk in 1996: Engineering a 2D Quality Mesh Generator and Delaunay Triangulator [2]. The implementation extends the common Delaunay triangulation algorithms, by inserting Steiner points corresponding to mid-points of segments and circumcenters in order to refine the mesh.</p>
+<p>With this <a href="https://bitbucket.org/nelsonkenzotamashiro/delaunay_shewchuk">repository</a> I&rsquo;ve converted Shewchuk&rsquo;s triangulate C-library to Web Assembly using <a href="https://kripken.github.io/emscripten-site/">Emscripten</a> [3] and presented simple C and Javascript adapters, so that the mesh refinement can be performed in the browser with Javascript programming interface.</p>
+<h1 id="usage">Usage</h1>
+<p>To use the library on the web, move the three files inside bin directory (adapter_delaunay.js, delaunay_shewchuk.js and delaunay_shewchuk.wasm) to the same deployment folder. Load the JS files with HTML basic script/src syntax.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;adapter_delaunay.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;delaunay_shewchuk.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><p>Delaunay triangulation mesh refinement was encapsulated inside <strong>refine</strong> method.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// vertexes are defined by x &amp; y arrays of floating numbers
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x_values</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.25</span>, <span style="color:#ae81ff">0.75</span>, <span style="color:#ae81ff">0.50</span>, ];
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">y_values</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">0.25</span>, <span style="color:#ae81ff">0.25</span>, <span style="color:#ae81ff">0.75</span>, ];
+
+<span style="color:#75715e">// Segments are defined in single array of integers
+</span><span style="color:#75715e">//    Each pair of ints define extremes of a segment by coordinate indexes
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">segments</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">4</span>];
+
+<span style="color:#75715e">// Holes are defined in single array of floating numbers
+</span><span style="color:#75715e">//    Each pair of floats define X and Y coordinates of a hole
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">holes</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">0.5</span>];
+
+<span style="color:#75715e">// Max area is a floating number
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">max_area</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.1</span>; <span style="color:#75715e">// max output triangle area
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">output</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">refine</span>(<span style="color:#a6e22e">x_values</span>, <span style="color:#a6e22e">y_values</span>, <span style="color:#a6e22e">segments</span>, <span style="color:#a6e22e">holes</span>, <span style="color:#a6e22e">max_area</span>);
+
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">output</span>.<span style="color:#a6e22e">data_x</span>); <span style="color:#75715e">// refine&#39;s output was encapsulated in a json object
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">output</span>.<span style="color:#a6e22e">data_y</span>); <span style="color:#75715e">//    - x and y coordinates
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">output</span>.<span style="color:#a6e22e">data_s</span>); <span style="color:#75715e">//    - segments: they might have been divided
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">output</span>.<span style="color:#a6e22e">data_e</span>); <span style="color:#75715e">//    - edges: includes segments and Steiner connected points
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">output</span>.<span style="color:#a6e22e">data_t</span>); <span style="color:#75715e">//    - triangles: every three ints connects vertexes by index
+</span></code></pre></div><h1 id="build">Build</h1>
+<p>To build the library, have emcc (Emscripten Code Compiler) installed and provide its path to the makefile, changing the CC variable.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">CC <span style="color:#f92672">=</span> <span style="color:#66d9ef">$(</span>PATH_TO_EMCC<span style="color:#66d9ef">)</span>
+</code></pre></div><p>Then run make inside makefile folder.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ make
+</code></pre></div><p>The generated files <strong>delaunay_shewchuk.js</strong> and <strong>delaunay_shewchuk.wasm</strong> can then be loaded in the browser as any other JS library. Have both files together at the same folder.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;delaunay_shewchuk.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><h1 id="testing">Testing</h1>
+<p>After building the wasm module, it is possible to test it with <strong>Nodejs</strong>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">    $ node adapter.js
+</code></pre></div><p>Read javascript code, for more information.</p>
+<h1 id="development">Development</h1>
+<h2 id="javascript">Javascript</h2>
+<p>This repository&rsquo;s strategy to access C-level functions is to use Emscripten&rsquo;s <strong>cwrap</strong> interface to call <strong>EMSCRIPTEN_KEEPALIVE</strong> C-defined functions from javascript, and to  allocate memory in javascript <strong>typedarrays</strong> to provide data as pointer arguments to those functions.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">delaunay_refine</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Module</span>.<span style="color:#a6e22e">cwrap</span>( <span style="color:#75715e">// cwrap binding
+</span><span style="color:#75715e"></span>   <span style="color:#e6db74">&#34;delaunay_refine&#34;</span>,
+   <span style="color:#e6db74">&#34;number&#34;</span>,
+   [  <span style="color:#e6db74">&#34;number&#34;</span>, <span style="color:#e6db74">&#34;number&#34;</span>,           <span style="color:#75715e">// points coordinate arrays
+</span><span style="color:#75715e"></span>      <span style="color:#e6db74">&#34;number&#34;</span>, <span style="color:#e6db74">&#34;number&#34;</span>,           <span style="color:#75715e">// segments and holes arrays
+</span><span style="color:#75715e"></span>      <span style="color:#e6db74">&#34;number&#34;</span>, <span style="color:#e6db74">&#34;number&#34;</span>, <span style="color:#e6db74">&#34;number&#34;</span>, <span style="color:#75715e">// numbers of points, segments and holes
+</span><span style="color:#75715e"></span>      <span style="color:#e6db74">&#34;number&#34;</span> <span style="color:#75715e">/*last number: max_area*/</span> ]);
+
+<span style="color:#75715e">// javascript defined data
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x_values</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">0.0</span>];
+<span style="color:#75715e">// Module._malloc returns pointer to allocation, just like in C-language
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ptr_x</span>  <span style="color:#f92672">=</span> <span style="color:#a6e22e">Module</span>.<span style="color:#a6e22e">_malloc</span>( <span style="color:#a6e22e">input_points_length</span>    <span style="color:#f92672">*</span><span style="color:#ae81ff">8</span> ); <span style="color:#75715e">// *8: 8 bytes for double
+</span><span style="color:#75715e">// Float64Array will access that memory and allow to modify data from javascript
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">data_x</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Float64Array</span>(<span style="color:#a6e22e">Module</span>.<span style="color:#a6e22e">HEAPF64</span>.<span style="color:#a6e22e">buffer</span>, <span style="color:#a6e22e">ptr_x</span>, <span style="color:#a6e22e">input_points_length</span>  );
+<span style="color:#75715e">// Finally, we set data.
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">data_x</span>.<span style="color:#a6e22e">set</span>(<span style="color:#a6e22e">x_values</span>);
+</code></pre></div><p>Read <strong>adapter.js</strong> for specific information and see how everything is encapsulated and called from <strong>Module.onRuntimeInitialized</strong>.</p>
+<h2 id="c-language">C Language</h2>
+<p>This repository&rsquo;s strategy to adapt Shewchuk&rsquo;s library to wasm is to implement C-language <strong>IO functions</strong> to incorporate raw primitive data types, like javascript typedarray memory allocations, and <strong>standardize configurations</strong> of triangulateio struct. Also, as the output is not easily predictable, output data is temporarily <strong>stored in C global variables</strong> so that it can be <strong>latter exported to proper output</strong> allocated pointers with export and getter functions.</p>
+<h3 id="input-functions-signature">Input functions signature.</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">populate_points</span>(
+   <span style="color:#66d9ef">struct</span> triangulateio <span style="color:#f92672">*</span>tri, <span style="color:#75715e">// populates are basic functions to encapsulate the insertion 
+</span><span style="color:#75715e"></span>   REAL <span style="color:#f92672">*</span>pos_dataX,           <span style="color:#75715e">//    of primitive data arrays into triangle main structs.
+</span><span style="color:#75715e"></span>   REAL <span style="color:#f92672">*</span>pos_dataY,           <span style="color:#75715e">//
+</span><span style="color:#75715e"></span>   <span style="color:#66d9ef">int</span> num_points
+);
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">populate_segments</span>(
+   <span style="color:#66d9ef">struct</span> triangulateio <span style="color:#f92672">*</span>tri, <span style="color:#75715e">// shewchuk&#39;s library main struct
+</span><span style="color:#75715e"></span>   <span style="color:#66d9ef">int</span>  <span style="color:#f92672">*</span>segments,            <span style="color:#75715e">// pointer to array of segments
+</span><span style="color:#75715e"></span>   <span style="color:#66d9ef">int</span> num_segments           <span style="color:#75715e">// number of segments
+</span><span style="color:#75715e"></span>);
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">populate_holes</span>(           
+   <span style="color:#66d9ef">struct</span> triangulateio <span style="color:#f92672">*</span>tri, 
+   REAL  <span style="color:#f92672">*</span>holes, 
+   <span style="color:#66d9ef">int</span> num_holes
+);
+</code></pre></div><h3 id="standard-configurations">Standard configurations</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">configure_input</span> (<span style="color:#66d9ef">struct</span> triangulateio <span style="color:#f92672">*</span>tri); <span style="color:#75715e">// function that applies basic configuration
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">configure_output</span>(<span style="color:#66d9ef">struct</span> triangulateio <span style="color:#f92672">*</span>tri); <span style="color:#75715e">//   to input and output
+</span></code></pre></div><h3 id="global-defined-data-and-storing">Global defined data and storing</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C">REAL <span style="color:#f92672">*</span>refined_dataX;       <span style="color:#75715e">// global reference to X coordinates array
+</span><span style="color:#75715e"></span>REAL <span style="color:#f92672">*</span>refined_dataY;       <span style="color:#75715e">//                     Y coordinates array
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span>  <span style="color:#f92672">*</span>refined_segments;    <span style="color:#75715e">// global reference to segments  array
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span>  <span style="color:#f92672">*</span>refined_edges;       <span style="color:#75715e">//                  to edges     array
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span>  <span style="color:#f92672">*</span>refined_triangles;   <span style="color:#75715e">//                  to triangles array
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span>  refined_numPoints;    <span style="color:#75715e">// global number of points
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span>  refined_numSegments;  <span style="color:#75715e">//        number of segments
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span>  refined_numEdges;     <span style="color:#75715e">//        number of edges
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span>  refined_numTriangles; <span style="color:#75715e">//        number of triangles
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">store_globaly</span>(<span style="color:#66d9ef">struct</span> triangulateio <span style="color:#f92672">*</span>tri);   <span style="color:#75715e">// stores global information
+</span></code></pre></div><h3 id="getters">Getters</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C">EMSCRIPTEN_KEEPALIVE    <span style="color:#75715e">// keep alive set to all getters
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> get_refinedNumPoints   (); <span style="color:#75715e">// getters retrieve global data stored by store_globaly
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">get_refinedNumSegments</span> ();
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">get_refinedNumEdges</span>    ();
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">get_refinedNumTriangles</span>();
+</code></pre></div><h3 id="export-function">Export Function</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C">EMSCRIPTEN_KEEPALIVE
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">export_data</span>(    <span style="color:#75715e">// export will copy global stored data to the provided arrays
+</span><span style="color:#75715e"></span>   REAL <span style="color:#f92672">*</span>pos_dataX, <span style="color:#75715e">//     - prior memory allocation is needed
+</span><span style="color:#75715e"></span>   REAL <span style="color:#f92672">*</span>pos_dataY, <span style="color:#75715e">//     - this repository uses javascript typedarrays as allocations
+</span><span style="color:#75715e"></span>   <span style="color:#66d9ef">int</span>  <span style="color:#f92672">*</span>segments,
+   <span style="color:#66d9ef">int</span>  <span style="color:#f92672">*</span>edges,
+   <span style="color:#66d9ef">int</span>  <span style="color:#f92672">*</span>triangles
+);
+</code></pre></div><h3 id="refinement-function">Refinement function</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C">EMSCRIPTEN_KEEPALIVE
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">delaunay_refine</span>(
+   REAL <span style="color:#f92672">*</span>pos_dataX, REAL <span style="color:#f92672">*</span>pos_dataY, <span style="color:#66d9ef">int</span>  <span style="color:#f92672">*</span>segments, REAL <span style="color:#f92672">*</span>holes,
+   <span style="color:#66d9ef">int</span> num_points, <span style="color:#66d9ef">int</span> num_segments, <span style="color:#66d9ef">int</span> num_holes,
+   REAL max_area
+);
+</code></pre></div><h2 id="more-information">More Information</h2>
+<p>If the ideia is to improve the adapter or the triangulation algorithm and further information is needed, take a look on Shewchuk&rsquo;s library and read the header file <strong>triangle.h</strong>.</p>
+<h1 id="references">References</h1>
+<ol>
+<li>B. Delaunay, Sur la sphère vide. A la mémoire de Georges Voronoi, Bulletin de l&rsquo;Académie des Sciences de l&rsquo;URSS. Classe des sciences mathématiques et naturelles, 1934, no. 6, 793–800.</li>
+<li>Jonathan Richard Shewchuk, Triangle: Engineering a 2D Quality Mesh Generator and Delaunay Triangulator, in Applied Computational Geometry: Towards Geometric Engineering (Ming C. Lin and Dinesh Manocha, editors), volume 1148 of Lecture Notes in Computer Science, pages 203-222, Springer-Verlag, Berlin, May 1996. (From the First ACM Workshop on Applied Computational Geometry.)</li>
+<li>Alon Zakai. 2011. Emscripten: an LLVM-to-JavaScript compiler. In Proceedings of the ACM international conference companion on Object oriented programming systems languages and applications companion (OOPSLA &lsquo;11). ACM, New York, NY, USA, 301-312. DOI: <a href="https://doi.org/10.1145/2048147.2048224">https://doi.org/10.1145/2048147.2048224</a></li>
+</ol>
+</div>
+				
+				<footer class="entry__footer">
+					
+<div class="entry__tags">
+			<a class="entry__tag btn" href="/tags/mesh-refinement/">Mesh Refinement</a>
+			<a class="entry__tag btn" href="/tags/emscripten/">Emscripten</a>
+			<a class="entry__tag btn" href="/tags/webassembly/">WebAssembly</a>
+			<a class="entry__tag btn" href="/tags/javascript/">Javascript</a>
+			<a class="entry__tag btn" href="/tags/c/">C</a>
+</div>
+					
+<div class="entry__share share">
+	<a class="share__link btn" title="Share on Reddit" href="https://www.reddit.com/submit?url=%2fpost%2ftriangulation%2f&amp;title=Triangulation" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Reddit', 'width=832,height=624,toolbar=0,status=0'); return false">
+		<svg class="share__icon" aria-label="Reddit" role="img" width="32" height="32" viewBox="0 0 512 512"><path fill-rule="evenodd" d="M375 146a32 32 0 1 0-29-46l-65-13c-5-1-9 2-10 6l-22 97c-45 1-85 15-113 36a42 42 0 1 0-45 69l-1 12c0 65 74 117 166 117s166-52 166-117l-1-11a42 42 0 1 0-44-69c-28-21-67-35-111-37l19-86 58 13a32 32 0 0 0 32 29zM190 353c2-1 4 0 5 1 15 11 38 18 61 18s46-6 61-18a7 7 0 0 1 8 10c-18 14-44 21-69 21-25-1-51-7-69-21a6 6 0 0 1 3-11zm23-44a31 31 0 1 1-44-44 31 31 0 0 1 44 44zm130 0a31 31 0 1 0-44-44 31 31 0 0 0 44 44z"/></svg>
+	</a>
+	<a class="share__link btn" title="Share on VK" href="https://vk.com/share.php?url=%2fpost%2ftriangulation%2f" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on VK', 'width=640,height=480,toolbar=0,status=0'); return false">
+		<svg class="share__icon" aria-label="VK" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M274 363c5-1 14-3 14-15 0 0-1-30 13-34s32 29 51 42c14 9 25 8 25 8l51-1s26-2 14-23c-1-2-9-15-39-42-31-30-26-25 11-76 23-31 33-50 30-57-4-7-20-6-20-6h-57c-6 0-9 1-12 6 0 0-9 25-21 45-25 43-35 45-40 42-9-5-7-24-7-37 0-45 7-61-13-65-13-2-59-4-73 3-7 4-11 11-8 12 3 0 12 1 17 7 8 13 9 75-2 81-15 11-53-62-62-86-2-6-5-7-12-9H79c-6 0-15 1-11 13 27 56 83 193 184 192z"/></svg>
+	</a>
+	<a class="share__link btn" title="Save to Pocket" href="https://getpocket.com/edit?url=%2fpost%2ftriangulation%2f&amp;title=Triangulation" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Save to Pocket', 'width=480,height=320,toolbar=0,status=0'); return false">
+		<svg class="share__icon" aria-label="Pocket" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M388.8 88.9H123.2A47.4 47.4 0 0 0 76 136.5v131.9c0 2.4.2 4.8.5 7.2a101.8 101.8 0 0 0-.5 10.6c0 75.6 80.6 137 180 137s180-61.4 180-137c0-3.6-.2-7.1-.5-10.6.3-2.4.5-4.8.5-7.2v-132A47.4 47.4 0 0 0 388.8 89zm-22.4 132.6l-93 93c-4.7 4.6-11 7-17.1 7a23.8 23.8 0 0 1-17.7-7l-93-93a24 24 0 0 1 33.8-33.8l76.6 76.5 76.6-76.5a24 24 0 0 1 33.8 33.8z"/></svg>
+	</a>
+</div>
+				</footer>
+				
+			</article>
+		</div>
+	</main>
+	
+<div class="authorbox block">
+	<div class="author">
+		<div class="author__body">
+			<div class="author__name">
+				Nelson Kenzo Tamashiro
+			</div>
+			<div class="author__bio">Engineer, Developer, Full Stack, Linux.</div>
+		</div>
+	</div>
+</div>
+	
+
+
+
+	
+
+	</div>
+	<footer class="footer">
+<div class="footer__social social">
+		<a class="social__link" target="_blank" rel="noopener noreferrer" href="mailto:nelsonkenzotamashiro@gmail.com">
+			<svg class="social__icon" aria-label="Email" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M299 268l124 106c-4 4-10 7-17 7H106c-7 0-13-3-17-7l124-106 43 38 43-38zm-43 13L89 138c4-4 10-7 17-7h300c7 0 13 3 17 7L256 281zm54-23l121-105v208L310 258zM81 153l121 105L81 361V153z"/></svg>
+		</a>
+		<a class="social__link" target="_blank" rel="noopener noreferrer" href="https://github.com/nelsonatgithub">
+			<svg class="social__icon" aria-label="Github" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+		</a>
+</div>
+	<div class="footer__copyright">© 2020 Nelson Kenzo Tamashiro. <span class="footer__copyright-credits">Powered by <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/vimux/binario" rel="nofollow noopener" target="_blank">Binario</a> theme.</span></div>
+</footer>
+<script src="/js/menu.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+
+</body>
+</html>
