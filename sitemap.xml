@@ -3,17 +3,77 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/tags/c/</loc>
-    <lastmod>2020-03-24T12:12:33-03:00</lastmod>
+    <loc>/post/biological-classification/</loc>
+    <lastmod>2020-03-25T12:11:53-03:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2020-03-24T12:12:33-03:00</lastmod>
+    <lastmod>2020-03-25T12:11:53-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/deployment/</loc>
+    <lastmod>2020-03-25T12:11:53-03:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/development/</loc>
+    <lastmod>2020-03-25T12:11:53-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/heroku/</loc>
+    <lastmod>2020-03-25T12:11:53-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/java/</loc>
+    <lastmod>2020-03-25T12:11:53-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/javascript/</loc>
+    <lastmod>2020-03-25T12:11:53-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-03-25T12:11:53-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/nodeexpress/</loc>
+    <lastmod>2020-03-25T12:11:53-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-03-25T12:11:53-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/react/</loc>
+    <lastmod>2020-03-25T12:11:53-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/restful/</loc>
+    <lastmod>2020-03-25T12:11:53-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/sql/</loc>
+    <lastmod>2020-03-25T12:11:53-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-03-25T12:11:53-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/c/</loc>
     <lastmod>2020-03-24T12:12:33-03:00</lastmod>
   </url>
   
@@ -23,27 +83,7 @@
   </url>
   
   <url>
-    <loc>/tags/javascript/</loc>
-    <lastmod>2020-03-24T12:12:33-03:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/mesh-refinement/</loc>
-    <lastmod>2020-03-24T12:12:33-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2020-03-24T12:12:33-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2020-03-24T12:12:33-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
     <lastmod>2020-03-24T12:12:33-03:00</lastmod>
   </url>
   
@@ -55,6 +95,21 @@
   <url>
     <loc>/tags/webassembly/</loc>
     <lastmod>2020-03-24T12:12:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/articles/</loc>
+    <lastmod>2020-03-23T21:55:12-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/design-patterns/</loc>
+    <lastmod>2020-03-23T21:55:12-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/software-architeture/</loc>
+    <lastmod>2020-03-23T21:55:12-03:00</lastmod>
   </url>
   
 </urlset>

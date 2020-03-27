@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software Architeture on Nelson Portifolio</title>
+    <link>/tags/software-architeture/</link>
+    <description>Recent content in Software Architeture on Nelson Portifolio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Mar 2020 21:55:12 -0300</lastBuildDate>
+    
+	<atom:link href="/tags/software-architeture/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Design Patterns: Elements of Reusable Object-Oriented Software</title>
+      <link>/post/design-patterns/</link>
+      <pubDate>Mon, 23 Mar 2020 21:55:12 -0300</pubDate>
+      
+      <guid>/post/design-patterns/</guid>
+      <description>One thing expert designers know not to do is solve every problem from first principles. Rather, they reuse solutions that have worked for them in the past. When they find a good solution, they use it again and again. Such experience is part of what makes them experts. Consequently, you&amp;rsquo;ll find recurring patterns of classes and communicating objects in many object-oriented systems. These patterns solve specific design problems and make object-oriented designs more flexible, elegant, and ultimately reusable.</description>
+    </item>
+    
+  </channel>
+</rss>

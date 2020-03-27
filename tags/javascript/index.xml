@@ -6,10 +6,19 @@
     <description>Recent content in Javascript on Nelson Portifolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 Mar 2020 12:12:33 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 25 Mar 2020 12:11:53 -0300</lastBuildDate>
     
 	<atom:link href="/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Biological Database</title>
+      <link>/post/biological-classification/</link>
+      <pubDate>Wed, 25 Mar 2020 12:11:53 -0300</pubDate>
+      
+      <guid>/post/biological-classification/</guid>
+      <description>GBIF provides very large datasets of biological beings. I downloaded a dataset and implemented some infrastructure to present it in the browser. The dataset had 7 million entries. I grouped them into 757 entries. I developed a Restful API to provide the data through HTTP protocol and a ReactApp that may consume it. Currently, everything is deployed in Heroku. The Link to the site is here. Deployment is under free account so loading is a bit slow.</description>
+    </item>
     
     <item>
       <title>Triangulation</title>
@@ -17,8 +26,17 @@
       <pubDate>Tue, 24 Mar 2020 12:12:33 -0300</pubDate>
       
       <guid>/post/triangulation/</guid>
-      <description>Delaunay triangulation is a special triangulation, where the circumcircle of any triangle in the triangulation does not contain any vertex in its interior. L&amp;rsquo;idée was proposed in 1934 by Boris Delaunay in his paper Sur la Sphère Vide [1]. The triangulation&amp;rsquo;s emptiness property maximizes the minimum interior angle of the triangles in the triangulation and has important applications to several areas, including mesh generation.
+      <description>Delaunay triangulation is a special triangulation, where the circumcircle of any triangle in the triangulation does not contain any vertex in its interior. L&amp;rsquo;idée was proposed in 1934 by Boris Delaunay in his paper Sur la Sphère Vide [1]. The triangulation&amp;rsquo;s emptiness property maximizes the smallest interior angle of the triangles in the triangulation and has important applications to several areas, including mesh generation.
 A robust C-language implementation of mesh generation and refinement that applies Delaunay triangulation is Triangle, made by Jonathan Richard Shewchuk in 1996: Engineering a 2D Quality Mesh Generator and Delaunay Triangulator [2].</description>
+    </item>
+    
+    <item>
+      <title>Design Patterns: Elements of Reusable Object-Oriented Software</title>
+      <link>/post/design-patterns/</link>
+      <pubDate>Mon, 23 Mar 2020 21:55:12 -0300</pubDate>
+      
+      <guid>/post/design-patterns/</guid>
+      <description>One thing expert designers know not to do is solve every problem from first principles. Rather, they reuse solutions that have worked for them in the past. When they find a good solution, they use it again and again. Such experience is part of what makes them experts. Consequently, you&amp;rsquo;ll find recurring patterns of classes and communicating objects in many object-oriented systems. These patterns solve specific design problems and make object-oriented designs more flexible, elegant, and ultimately reusable.</description>
     </item>
     
   </channel>

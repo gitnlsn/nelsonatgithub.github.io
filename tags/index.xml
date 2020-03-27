@@ -6,10 +6,82 @@
     <description>Recent content in Tags on Nelson Portifolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 Mar 2020 12:12:33 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 25 Mar 2020 12:11:53 -0300</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Deployment</title>
+      <link>/tags/deployment/</link>
+      <pubDate>Wed, 25 Mar 2020 12:11:53 -0300</pubDate>
+      
+      <guid>/tags/deployment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Heroku</title>
+      <link>/tags/heroku/</link>
+      <pubDate>Wed, 25 Mar 2020 12:11:53 -0300</pubDate>
+      
+      <guid>/tags/heroku/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>/tags/java/</link>
+      <pubDate>Wed, 25 Mar 2020 12:11:53 -0300</pubDate>
+      
+      <guid>/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>/tags/javascript/</link>
+      <pubDate>Wed, 25 Mar 2020 12:11:53 -0300</pubDate>
+      
+      <guid>/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NodeExpress</title>
+      <link>/tags/nodeexpress/</link>
+      <pubDate>Wed, 25 Mar 2020 12:11:53 -0300</pubDate>
+      
+      <guid>/tags/nodeexpress/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>React</title>
+      <link>/tags/react/</link>
+      <pubDate>Wed, 25 Mar 2020 12:11:53 -0300</pubDate>
+      
+      <guid>/tags/react/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Restful</title>
+      <link>/tags/restful/</link>
+      <pubDate>Wed, 25 Mar 2020 12:11:53 -0300</pubDate>
+      
+      <guid>/tags/restful/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sql</title>
+      <link>/tags/sql/</link>
+      <pubDate>Wed, 25 Mar 2020 12:11:53 -0300</pubDate>
+      
+      <guid>/tags/sql/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>C</title>
@@ -30,15 +102,6 @@
     </item>
     
     <item>
-      <title>Javascript</title>
-      <link>/tags/javascript/</link>
-      <pubDate>Tue, 24 Mar 2020 12:12:33 -0300</pubDate>
-      
-      <guid>/tags/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Mesh Refinement</title>
       <link>/tags/mesh-refinement/</link>
       <pubDate>Tue, 24 Mar 2020 12:12:33 -0300</pubDate>
@@ -53,6 +116,15 @@
       <pubDate>Tue, 24 Mar 2020 12:12:33 -0300</pubDate>
       
       <guid>/tags/webassembly/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Software Architeture</title>
+      <link>/tags/software-architeture/</link>
+      <pubDate>Mon, 23 Mar 2020 21:55:12 -0300</pubDate>
+      
+      <guid>/tags/software-architeture/</guid>
       <description></description>
     </item>
     

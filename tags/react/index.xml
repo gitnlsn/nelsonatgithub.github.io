@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>React on Nelson Portifolio</title>
+    <link>/tags/react/</link>
+    <description>Recent content in React on Nelson Portifolio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 25 Mar 2020 12:11:53 -0300</lastBuildDate>
+    
+	<atom:link href="/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Biological Database</title>
+      <link>/post/biological-classification/</link>
+      <pubDate>Wed, 25 Mar 2020 12:11:53 -0300</pubDate>
+      
+      <guid>/post/biological-classification/</guid>
+      <description>GBIF provides very large datasets of biological beings. I downloaded a dataset and implemented some infrastructure to present it in the browser. The dataset had 7 million entries. I grouped them into 757 entries. I developed a Restful API to provide the data through HTTP protocol and a ReactApp that may consume it. Currently, everything is deployed in Heroku. The Link to the site is here. Deployment is under free account so loading is a bit slow.</description>
+    </item>
+    
+  </channel>
+</rss>

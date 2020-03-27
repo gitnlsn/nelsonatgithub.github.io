@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#1b1b1b">
+	<title>Biological Database | Nelson Portifolio</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="Biological Database" />
+<meta property="og:description" content="GBIF provides very large datasets of biological beings. I downloaded a dataset and implemented some infrastructure to present it in the browser. The dataset had 7 million entries. I grouped them into 757 entries. I developed a Restful API to provide the data through HTTP protocol and a ReactApp that may consume it. Currently, everything is deployed in Heroku. The Link to the site is here. Deployment is under free account so loading is a bit slow." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/biological-classification/" />
+<meta property="article:published_time" content="2020-03-25T12:11:53-03:00" />
+<meta property="article:modified_time" content="2020-03-25T12:11:53-03:00" />
+
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Biological Database"/>
+<meta name="twitter:description" content="GBIF provides very large datasets of biological beings. I downloaded a dataset and implemented some infrastructure to present it in the browser. The dataset had 7 million entries. I grouped them into 757 entries. I developed a Restful API to provide the data through HTTP protocol and a ReactApp that may consume it. Currently, everything is deployed in Heroku. The Link to the site is here. Deployment is under free account so loading is a bit slow."/>
+
+	<link rel="stylesheet" href="/css/bundle.css">
+	<link rel="stylesheet" href="/css/themes/dark-green.css">
+	<link rel="icon" href="/icons/16.png" sizes="16x16" type="image/png">
+	<link rel="icon" href="/icons/32.png" sizes="32x32" type="image/png">
+	<link rel="manifest" href="/manifest.json">
+		
+</head>
+<body>
+	<header class="header">
+	<a class="logo" href="/">Nelson Portifolio</a>
+	
+</header>
+	<div class="primary">
+	
+	<main class="main">
+		
+<nav class="breadcrumb block" aria-label="breadcrumb">
+	<ol class="breadcrumb__list">
+		
+		<li class="breadcrumb__item">
+			<a class="breadcrumbs__link" href="/">Home</a>
+		</li>
+		<li class="breadcrumb__item">
+			<a class="breadcrumbs__link" href="/post/">Posts</a>
+		</li>
+		<li class="breadcrumbs__item breadcrumb__item--active" aria-current="page">Biological Database</li>
+	</ol>
+</nav>
+		<div class="single block">
+			<article class="entry">
+	<div class="entry__meta meta mb">
+	<time class="entry__meta-published meta-published" datetime="2020-03-25T12:11:53-03:00">March 25, 2020</time>
+<span class="entry__meta-categories meta-categories">
+	<span class="meta-categories__list">Categories:
+		<a class="meta-categories__link" href="/categories/development" rel="category">Development</a>
+	</span>
+</span>
+	</div>
+				<h1 class="entry__title">Biological Database</h1>
+				<div class="entry__content"><p>GBIF provides very large datasets of biological beings. I downloaded a dataset and implemented some infrastructure to present it in the browser. The dataset had 7 million entries. I grouped them into 757 entries. I developed a Restful API to provide the data through HTTP protocol and a ReactApp that may consume it. Currently, everything is deployed in Heroku. The Link to the site is <a href="https://react-bioclass.herokuapp.com">here</a>. <em>Deployment is under free account so loading is a bit slow</em>.</p>
+<h1 id="architecture-design">Architecture Design</h1>
+<p>This project involves the following architectural components:</p>
+<ul>
+<li>Database</li>
+<li>Restful API</li>
+<li>React App</li>
+<li>External API</li>
+</ul>
+<h1 id="database">Database</h1>
+<p>The actual state of the <code>Database</code> was build on top of a GBIF dataset.</p>
+<p>The downloaded dataset from GBIF is composed of entries of animals with full classification: kingdom, phylum, class, order, family, genus, species. For each species, it was registered its occurrence according to location and date: latitude, longitude, state, year, month, day. There were hundreds of occurrences of each species in the database. There were also characteristics like depth, altitude and other empty columns.</p>
+<p>In the reduction process, the empty columns were filtered as they had no meaning. Numerical values, as latitude and longitude were evaluated by mean value and standard deviation. Dates were evaluated by min and max, leading to first and last inspection dates. Location names were grouped into an array of strings.</p>
+<p>The original dataset is acquired in csv format. It was inserted in the sql database to reduction process.</p>
+<h1 id="rest-api">Rest Api</h1>
+<p>The <code>Restful API</code> provides an HTTP interface to the system&rsquo;s data. It controls the access level a user may have upon the database, limiting its interaction to the commands expected by the system&rsquo;s Use Cases. It must maintain database integrity and consistency.</p>
+<h3 id="endpoints">Endpoints</h3>
+<blockquote>
+<p><strong>GET</strong> /animals/search/[class]?upper=[upper]</p>
+</blockquote>
+<ul>
+<li>[class] - desired biological classification</li>
+<li>[upper] - parent biological classification to filter result</li>
+</ul>
+<blockquote>
+<p><strong>GET</strong> /animals/detailed/[name]</p>
+</blockquote>
+<ul>
+<li>[name] - animal species name in this database</li>
+</ul>
+<h1 id="reactapp">ReactApp</h1>
+<p>The <code>ReactApp</code> is a Single Page App that renders the User Interface.</p>
+<p>It was build with Reactstrap, a framework that applies bootstrap to create default react components with basic and useful functionality.</p>
+<p>Data retrieval from RestApi and Pixabay was implemented through provider-consumer pattern. A react component queries data and provides it to inner react components.</p>
+<h3 id="external-api">External API</h3>
+<p>Pixabay server is the only <code>External API</code>. I use the HTTP interface to search for images to display in the User Interface.</p>
+<h1 id="deployment">Deployment</h1>
+<p>All services were hosted in Heroku, a Hosting service provider which supports small projects at startup stage.</p>
+<h1 id="todos--issues">Todos &amp; Issues</h1>
+<h3 id="slow-loading">Slow loading</h3>
+<p>First loading from Heroku&rsquo;s free hosting is slow. Probably, hosted services remain down, when idle. And it is turned up just when it is requested.</p>
+<p>Other hosting providers might have different strategies to provide its services and might be alternatives to Heroku.</p>
+<h3 id="missing-images">Missing images</h3>
+<p>Pixabay lacks specific images of some species, genus and families. And it is not assured Pixabay will always maintain the images available.</p>
+<p>It is necessary to find other sources of images and deploy a dedicated filesystem storage service for the images.</p>
+</div>
+				
+				<footer class="entry__footer">
+					
+<div class="entry__tags">
+			<a class="entry__tag btn" href="/tags/sql/">Sql</a>
+			<a class="entry__tag btn" href="/tags/javascript/">Javascript</a>
+			<a class="entry__tag btn" href="/tags/nodeexpress/">NodeExpress</a>
+			<a class="entry__tag btn" href="/tags/react/">React</a>
+			<a class="entry__tag btn" href="/tags/restful/">Restful</a>
+			<a class="entry__tag btn" href="/tags/heroku/">Heroku</a>
+			<a class="entry__tag btn" href="/tags/deployment/">Deployment</a>
+</div>
+					
+<div class="entry__share share">
+	<a class="share__link btn" title="Share on Reddit" href="https://www.reddit.com/submit?url=%2fpost%2fbiological-classification%2f&amp;title=Biological%20Database" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Reddit', 'width=832,height=624,toolbar=0,status=0'); return false">
+		<svg class="share__icon" aria-label="Reddit" role="img" width="32" height="32" viewBox="0 0 512 512"><path fill-rule="evenodd" d="M375 146a32 32 0 1 0-29-46l-65-13c-5-1-9 2-10 6l-22 97c-45 1-85 15-113 36a42 42 0 1 0-45 69l-1 12c0 65 74 117 166 117s166-52 166-117l-1-11a42 42 0 1 0-44-69c-28-21-67-35-111-37l19-86 58 13a32 32 0 0 0 32 29zM190 353c2-1 4 0 5 1 15 11 38 18 61 18s46-6 61-18a7 7 0 0 1 8 10c-18 14-44 21-69 21-25-1-51-7-69-21a6 6 0 0 1 3-11zm23-44a31 31 0 1 1-44-44 31 31 0 0 1 44 44zm130 0a31 31 0 1 0-44-44 31 31 0 0 0 44 44z"/></svg>
+	</a>
+	<a class="share__link btn" title="Share on VK" href="https://vk.com/share.php?url=%2fpost%2fbiological-classification%2f" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on VK', 'width=640,height=480,toolbar=0,status=0'); return false">
+		<svg class="share__icon" aria-label="VK" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M274 363c5-1 14-3 14-15 0 0-1-30 13-34s32 29 51 42c14 9 25 8 25 8l51-1s26-2 14-23c-1-2-9-15-39-42-31-30-26-25 11-76 23-31 33-50 30-57-4-7-20-6-20-6h-57c-6 0-9 1-12 6 0 0-9 25-21 45-25 43-35 45-40 42-9-5-7-24-7-37 0-45 7-61-13-65-13-2-59-4-73 3-7 4-11 11-8 12 3 0 12 1 17 7 8 13 9 75-2 81-15 11-53-62-62-86-2-6-5-7-12-9H79c-6 0-15 1-11 13 27 56 83 193 184 192z"/></svg>
+	</a>
+	<a class="share__link btn" title="Save to Pocket" href="https://getpocket.com/edit?url=%2fpost%2fbiological-classification%2f&amp;title=Biological%20Database" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Save to Pocket', 'width=480,height=320,toolbar=0,status=0'); return false">
+		<svg class="share__icon" aria-label="Pocket" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M388.8 88.9H123.2A47.4 47.4 0 0 0 76 136.5v131.9c0 2.4.2 4.8.5 7.2a101.8 101.8 0 0 0-.5 10.6c0 75.6 80.6 137 180 137s180-61.4 180-137c0-3.6-.2-7.1-.5-10.6.3-2.4.5-4.8.5-7.2v-132A47.4 47.4 0 0 0 388.8 89zm-22.4 132.6l-93 93c-4.7 4.6-11 7-17.1 7a23.8 23.8 0 0 1-17.7-7l-93-93a24 24 0 0 1 33.8-33.8l76.6 76.5 76.6-76.5a24 24 0 0 1 33.8 33.8z"/></svg>
+	</a>
+</div>
+				</footer>
+				
+			</article>
+		</div>
+	</main>
+	
+<div class="authorbox block">
+	<div class="author">
+		<div class="author__body">
+			<div class="author__name">
+				Nelson Kenzo Tamashiro
+			</div>
+			<div class="author__bio">Engineer, Developer, Full Stack, Linux.</div>
+		</div>
+	</div>
+</div>
+	
+
+
+
+<div class="related block">
+	<h3 class="related__title">Related</h3>
+	<ul class="related__list">
+		
+		<li class="related__item"><a class="related__link" href="/post/triangulation/">Triangulation</a></li>
+		
+		<li class="related__item"><a class="related__link" href="/post/design-patterns/">Design Patterns: Elements of Reusable Object-Oriented Software</a></li>
+		
+	</ul>
+</div>
+
+	
+
+	</div>
+	<footer class="footer">
+<div class="footer__social social">
+		<a class="social__link" target="_blank" rel="noopener noreferrer" href="mailto:nelsonkenzotamashiro@gmail.com">
+			<svg class="social__icon" aria-label="Email" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M299 268l124 106c-4 4-10 7-17 7H106c-7 0-13-3-17-7l124-106 43 38 43-38zm-43 13L89 138c4-4 10-7 17-7h300c7 0 13 3 17 7L256 281zm54-23l121-105v208L310 258zM81 153l121 105L81 361V153z"/></svg>
+		</a>
+		<a class="social__link" target="_blank" rel="noopener noreferrer" href="https://github.com/nelsonatgithub">
+			<svg class="social__icon" aria-label="Github" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+		</a>
+</div>
+	<div class="footer__copyright">© 2020 Nelson Kenzo Tamashiro. <span class="footer__copyright-credits">Powered by <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/vimux/binario" rel="nofollow noopener" target="_blank">Binario</a> theme.</span></div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+
+</body>
+</html>
